@@ -1,0 +1,202 @@
+$div-color: #0a4a75;
+
+body {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    opacity: 0;
+    animation-name: bodyAnim;
+    background-color: #0e6ba8;
+    color: white;
+}
+
+#main-container {
+    height: 100%;
+}
+
+#logo {
+    background-color: $div-color;
+    padding: 10px;
+    margin: 50px 0;
+    border-radius: 15px;
+}
+
+#airplane {
+    height: 120px;
+    width: 170px;
+}
+
+.titles {
+    color: #eea654;
+}
+
+#main {
+    padding: 50px;
+    background-color: $div-color;
+    min-height: 500px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+}
+
+#place, #datepicker {
+    width: 50%;
+    text-align: center;
+}
+
+#notes {
+    padding: 50px;
+    background-color: $div-color;
+    min-height: 600px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+}
+
+#userNote {
+    width: 90%;
+}
+
+
+.display-none {
+    display: none;
+}
+
+#backdrop {
+    position: fixed;
+    z-index: 1;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#results-modal {
+    padding: 20px;
+    background-color: $div-color;
+    width: 50%;
+    min-height: 500px;
+    margin-top: 56px;
+    border-radius: 15px;
+    opacity: 0;
+    animation-name: slideFromTop;
+    transform-origin: top center;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+}
+
+.close, .close:hover {
+    color: white;
+    
+}
+
+
+#note-list {
+    width: 90%;
+    margin: auto;
+}
+
+.note-item {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+li {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.select-item {
+    border: 1px solid rgb(46, 109, 255);
+}
+
+input, textarea, button:focus, .btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+h1, h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-decoration: underline;
+}
+
+img {
+    height: auto;
+    width: 50%;
+    border-radius: 10px;
+}
+
+#tripTitle, #tripDate, #highTemp, #lowTemp, #tripDays, #image {
+    transform-origin: top center;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
+
+#tripDate {
+    animation-delay: 0.1s;
+}
+
+#highTemp {
+    animation-delay: 0.2s;
+}
+
+#lowTemp {
+    animation-delay: 0.3s;
+}
+
+#tripDays {
+    animation-delay: 0.4s;
+}
+
+@keyframes resultsAnim {
+    FROM {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    TO {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromTop {
+    FROM {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+    TO {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+//load animation
+@keyframes bodyAnim {
+    FROM {
+        opacity: 0;
+    }
+    TO {
+        opacity: 1;
+    }
+}
+
+@media(max-width: 500px) {
+    #results-modal {
+        width: 90%;
+    }
+
+    #place, #datepicker {
+        width: 89%;
+    }
+}
+
+@media(max-width: 770px) {
+    #note-list {
+        width: inherit;
+    }
+}
+
+

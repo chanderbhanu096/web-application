@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Travel Mate</title>
+
+</head>
+<body>
+    <div class="container" id="main-container">
+        <div class="row" id="logo">
+            <div class="col text-center">
+                <img id="airplane" alt="airplane image">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col text-center" id="main">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div id="info">
+                                <h1 class="display-3 titles">Travel Mate</h1>
+                                <form action="" method="">
+                                    <h5>Enter a city you wish to visit</h5>
+                                    <input type="text" placeholder="ex: Tokyo, Japan" name="place" id="place"> 
+                                    <h5>When is would you like to go?</h5>
+                                    <input type="text" placeholder="ex: 01/29/20" name="date" id="datepicker"> 
+                                    <br><br>
+                                    <input type="submit" value="SUBMIT" class="btn btn-warning" id="submit"/>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NOTES -->
+        <div class="row text-center" id="notes">
+            <div class="col">
+                <div class="mt-5">
+                    <h2 class="display-4 titles">Notes</h2>
+                    <form action="">
+                        <textarea name="note" id="userNote" rows="5"></textarea>
+                    </form>
+                    <button class="btn btn-warning" id="save">SAVE</button>
+                    
+                    <h3 class="text-center mt-4" id="error-note"></h3>
+                    
+                    <ul class="text-left" id="note-list">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results modal -->
+    <div class="container-fluid display-none" id="backdrop">
+        <div class="text-center mx-auto" id="results-modal">
+            
+            <div id="results">
+                <button type="button" id="close-modal" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <h1 class="titles">My trip to: </h1>
+                <h5 id="tripTitle"></h5>
+    
+                <h2 class="mt-3 titles">Departing: </h2>
+                <h5  id="tripDate"></h5>
+    
+                <h5 id="tripDays"></h5>
+                
+                <h2 class="mt-3 titles">Weather:</h2>
+                <h5 id="highTemp"></h5>
+                <h5 id="lowTemp"></h5>
+    
+                <div class="m-auto pb-5" id="image"></div>
+            </div>
+        </div>
+    </div>
+
+   
+    <script>
+        // if('serviceWorker' in navigator) {
+        //     window.addEventListener('load', () => {
+        //         navigator.serviceWorker.register('/service-worker.js');
+        //     });
+        // } else {
+        //     console.log('Service workers are not supported.');
+        // }
+        
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
